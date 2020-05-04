@@ -1,0 +1,25 @@
+Problem:
+
+We would like you to develop an IaC solution to provision a free tier EC2 Amazon Linux instance. The instance should be running Apache server, and the default web site should serve up a page saying “Hello from AAA.BBB.CCC.DDD”, where AAA.BBB.CCC.DDD is the public IP address of the instance. The instance should include a tag, and a security group restricting traffic to port 80 and 22. SSH access should be possible via key-based authentication, but not by password.
+ 
+You should use Terraform for provisioning. You can use Ansible for configuration management if needed, but please do not use AWS-specific techniques such as CloudFormation.
+ 
+Please provide the solution as either a ZIP’ed Git repository, or a link to a public Git repository, if you have an account. If you use a public repository, do not store any credentials, or link the code to Capgemini and its customers in any way (the problem is deliberately designed to be generic to facilitate this
+ 
+=================================================================================
+
+Steps to implement:
+
+1. Install terraform on one of EC2 instance from where you want to run terraform commands.
+2. Copy all the files to a specific folder in EC2 instance, i have used winscp to copy quickly. Make sure you replace your own .pem file to connect to EC2.
+3. Execute "terraform init" & "terraform apply" commands & run web browser with newly created public ip address.
+
+
+==================================================================================
+
+
+Challange faced:
+
+Self reflecting is not allowed to get the ip address in aws_instance block, thats why had to go for javascript.
+
+==================================================================================
